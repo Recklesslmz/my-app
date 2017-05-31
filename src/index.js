@@ -4,5 +4,20 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+import ResetContent from './content'
+
+class Board extends React.Component {
+    render() {
+        return (
+            <ResetContent></ResetContent>
+        )
+    }
+
+
+
+}
+
+
+ReactDOM.render( <App />, document.getElementById('root'));
 registerServiceWorker();
