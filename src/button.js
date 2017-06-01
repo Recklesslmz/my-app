@@ -2,12 +2,9 @@
  * Created by limuzi on 2017/5/31.
  */
 import React from 'react'
+import {  Router, Route, Link  } from 'react-router'
 
 export default class ResetButton extends React.Component {
-    toNext() {
-        console.log('===')
-    }
-
     render() {
         return (
             <div className="contentName">
