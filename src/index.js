@@ -1,13 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 // import {Router,hashHistory} from 'react-router'
-import App from './App';
-import Home from './jsx/home'
+// import App from './App';
+import App from './jsx/App'
 import * as test from './test'
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
-// const app = document.querySelector("#root")
+// import App from "./App";
+const app = document.querySelector("body")
+app.style.background='#ebeef0'
 // app.innerHTML='hahah'
 console.log(test)
-ReactDOM.render(<Home name='lmz'/>, document.getElementById('root'));
+ReactDOM.render(<App/>, document.getElementById('root'));
 registerServiceWorker();
