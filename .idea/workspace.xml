@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bebecf02-dff8-4b69-95fa-28fbdd0373d5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.js" afterPath="$PROJECT_DIR$/src/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/jsx/home.jsx" afterPath="$PROJECT_DIR$/src/jsx/home.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scss/index.css" afterPath="$PROJECT_DIR$/src/scss/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scss/index.css.map" afterPath="$PROJECT_DIR$/src/scss/index.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/scss/index.scss" afterPath="$PROJECT_DIR$/src/scss/index.scss" />
-    </list>
+    <list default="true" id="bebecf02-dff8-4b69-95fa-28fbdd0373d5" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -96,9 +89,13 @@
         <entry file="file://$PROJECT_DIR$/src/jsx/header.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="171">
-              <caret line="9" column="37" lean-forward="false" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="37" />
+              <caret line="9" column="37" lean-forward="false" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
+                <marker date="1496761451000" expanded="true" signature="104:402" ph="{...}" />
+                <marker date="1496761451000" expanded="true" signature="116:315" ph="{...}" />
+                <marker date="1496761451000" expanded="true" signature="136:315" ph="&lt;div/&gt;" />
+                <marker date="1496761451000" expanded="true" signature="278:315" ph="&lt;div/&gt;" />
               </folding>
             </state>
           </provider>
@@ -401,12 +398,12 @@
       <workItem from="1496398688866" duration="481000" />
       <workItem from="1496669059505" duration="1224000" />
       <workItem from="1496712999465" duration="41000" />
-      <workItem from="1496756198040" duration="1925000" />
+      <workItem from="1496756198040" duration="2009000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18748000" />
+    <option name="totallyTimeSpent" value="18832000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -836,9 +833,13 @@
     <entry file="file://$PROJECT_DIR$/src/jsx/header.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
-          <caret line="9" column="37" lean-forward="false" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="37" />
+          <caret line="9" column="37" lean-forward="false" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
           <folding>
             <element signature="e#0#25#0" expanded="true" />
+            <marker date="1496761451000" expanded="true" signature="104:402" ph="{...}" />
+            <marker date="1496761451000" expanded="true" signature="116:315" ph="{...}" />
+            <marker date="1496761451000" expanded="true" signature="136:315" ph="&lt;div/&gt;" />
+            <marker date="1496761451000" expanded="true" signature="278:315" ph="&lt;div/&gt;" />
           </folding>
         </state>
       </provider>
