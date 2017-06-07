@@ -3,7 +3,6 @@
   width: 100%;
   height: 5.5rem;
   background: white;
-  margin-top: 1rem;
   .avatar {
     flex: 1;
     img {
@@ -28,13 +27,13 @@
       }
     ;
     }
-    .checkedName {
+    .memberDesc {
       font: {
         size: .9rem;
         weight: 300;
       }
     ;
-      color: #999;
+      color: #888;
     }
   }
 }

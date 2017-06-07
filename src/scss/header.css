@@ -2,8 +2,7 @@
   display: flex;
   width: 100%;
   height: 5.5rem;
-  background: white;
-  margin-top: 1rem; }
+  background: white; }
   .homePage .avatar {
     flex: 1; }
     .homePage .avatar img {
@@ -22,7 +21,7 @@
     .homePage .name .memberName {
       font-size: 1.2rem;
       font-weight: 300; }
-    .homePage .name .checkedName {
+    .homePage .name .memberDesc {
       font-size: .9rem;
       font-weight: 300;
-      color: #999; }
+      color: #888; }

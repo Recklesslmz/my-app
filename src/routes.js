@@ -2,16 +2,18 @@
  * Created by limuzi on 2017/6/1.
  */
 import React from 'react'
-import {Router, Route, Link} from 'react-router'
+import {render} from 'react-dom'
 
-import {Detail} from './detail'
-import {Button} from './button'
-import {Content} from './content'
+import {browserHistory, Router, Route} from 'react-router'
 
-const routes = (
-    <Route>
-        <Route path="detail" component={Detail}/>
-    </Route>
-);
+import App from './jsx/App'
+import Sale from './jsx/sale'
 
-export default routes
+render(
+    <Router history={browserHistory}>
+        <Route path='/' component={App}>
+            <Route path='/sale' component={Sale} />
+        </Route>
+    </Router>,
+    document.getElementById('root')
+)
