@@ -1,15 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import {Router,hashHistory} from 'react-router'
-// import App from './App';
-import App from './jsx/App'
-import * as test from './test'
-import registerServiceWorker from './registerServiceWorker';
+import App from '../src/App'
 import './index.css';
-// import App from "./App";
 const app = document.querySelector("body")
-app.style.background='#ebeef0'
-// app.innerHTML='hahah'
-console.log(test)
+app.style.background = '#ebeef0'
 ReactDOM.render(<App/>, document.getElementById('root'));
-registerServiceWorker();
