@@ -3,8 +3,15 @@
  */
 import MemberInfo from '../page/MemberInfo'
 import Setting from '../page/Setting'
+import Click from '../page/ClickCounter'
+import CounterPanel from '../page/CounterPanel'
+import Calculator from '../page/Calculator'
 
 const routes = [
+    {
+        path: '/Click',
+        component: Click
+    },
     {
         path: '/MemberInfo',
         component: MemberInfo,
@@ -12,6 +19,14 @@ const routes = [
     {
         path: '/Setting',
         component: Setting
+    },
+    {
+        path: '/CounterPanel',
+        component: CounterPanel
+    },
+    {
+        path: '/Calculator',
+        component: Calculator
     }
 ]
 
