@@ -18,6 +18,7 @@ export default class Calculator extends Component {
             result: ''
         }
     }
+
     bindNum(index) {
         arrayFirst.push(index)
         arraySecond.push(index)
@@ -27,7 +28,7 @@ export default class Calculator extends Component {
         let d = b.toString().replace(/,/g, "")
         if (this.state.isPlus) {
             this.setState({second: d})
-            this.setState({num: d.substring(this.state.first.length)})
+            this.setState({num: this.state.first + this.state.symbol + d.substring(this.state.first.length)})
         } else {
             this.setState({first: b})
             this.setState({num: b})
@@ -37,7 +38,9 @@ export default class Calculator extends Component {
     bindCalculator(index) {
         this.setState({isPlus: true})
         this.setState({symbol: index})
+        this.setState({num: this.state.first + index})
     }
+
     bindCalculatorRes() {
         const second = parseInt(this.state.second.substr(this.state.first.length))
         switch (this.state.symbol) {
