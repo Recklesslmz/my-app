@@ -10,38 +10,71 @@ export default class Calculator extends Component {
         super(props)
         console.log(props)
         this.state = {
-            num: 0,
-            isPlus: false,
-            symbol: '',
-            first: 0,
-            second: 0,
-            result: ''
+            arrayFirst: [],
+            arraySecond: [],
+            num: 0,//初始展示数字
+            isPlus: false,//是否按下运算符
+            symbol: '',//运算符参数
+            first: 0,//第一个数字
+            second: 0,//第二个数字
+            result: '',//结果
+            isResult: false//是否运算
         }
     }
 
+    //数字
     bindNum(index) {
+        // console.log(this.state.isResult)
+        // if (this.state.isResult) {
+        //     this.setState({num: 0})
+        //     this.setState({isPlus: false})
+        //     this.setState({arrayFirst: []})
+        //     this.setState({arraySecond: []})
+        // }
+        let arrayFirst = this.state.arrayFirst
+        let arraySecond = this.state.arraySecond
         arrayFirst.push(index)
         arraySecond.push(index)
-        let a = arrayFirst
+        console.log(arrayFirst)
+        this.setState({arrayFirst: arrayFirst})
+        this.setState({arraySecond: arraySecond})
+        let a = this.state.arrayFirst
         let b = a.toString().replace(/,/g, "")
-        let c = arraySecond
+        let c = this.state.arraySecond
         let d = b.toString().replace(/,/g, "")
         if (this.state.isPlus) {
             this.setState({second: d})
             this.setState({num: this.state.first + this.state.symbol + d.substring(this.state.first.length)})
         } else {
+            console.log(b)
             this.setState({first: b})
             this.setState({num: b})
         }
+
     }
 
+    //运算符
     bindCalculator(index) {
         this.setState({isPlus: true})
         this.setState({symbol: index})
         this.setState({num: this.state.first + index})
     }
 
+    //归零
+    bindCalculatorAc() {
+        this.setState({num: 0})
+        this.setState({isPlus: false})
+        this.setState({symbol: ''})
+        this.setState({first: 0})
+        this.setState({second: 0})
+        this.setState({result: ''})
+    }
+
+    //运算
     bindCalculatorRes() {
+        this.setState({isResult: true})
+        arrayFirst = []
+        arraySecond = []
         const second = parseInt(this.state.second.substr(this.state.first.length))
         switch (this.state.symbol) {
             case '+':
@@ -82,6 +115,7 @@ export default class Calculator extends Component {
                     <div className="key" onClick={this.bindCalculator.bind(this, '*')}>*</div>
                     <div className="key" onClick={this.bindCalculator.bind(this, '/')}>/</div>
                     <div className="key" onClick={this.bindCalculatorRes.bind(this, '=')}>=</div>
+                    <div className="key" onClick={this.bindCalculatorAc.bind(this)}>AC</div>
                 </div>
             </div>
         )
