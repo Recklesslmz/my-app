@@ -3,8 +3,7 @@
  */
 import React, {Component} from 'react'
 import '../App.css'
-let arrayFirst = []
-let arraySecond = []
+
 export default class Calculator extends Component {
     constructor(props) {
         super(props)
@@ -24,57 +23,49 @@ export default class Calculator extends Component {
 
     //数字
     bindNum(index) {
-        // console.log(this.state.isResult)
-        // if (this.state.isResult) {
-        //     this.setState({num: 0})
-        //     this.setState({isPlus: false})
-        //     this.setState({arrayFirst: []})
-        //     this.setState({arraySecond: []})
-        // }
+        if (this.state.isResult) {
+            this.setState({num: 0, isPlus: false, arrayFirst: [], arraySecond: []})
+        }
         let arrayFirst = this.state.arrayFirst
         let arraySecond = this.state.arraySecond
         arrayFirst.push(index)
         arraySecond.push(index)
-        console.log(arrayFirst)
-        this.setState({arrayFirst: arrayFirst})
-        this.setState({arraySecond: arraySecond})
+        this.setState({arrayFirst: arrayFirst, arraySecond: arraySecond})
         let a = this.state.arrayFirst
         let b = a.toString().replace(/,/g, "")
         let c = this.state.arraySecond
         let d = b.toString().replace(/,/g, "")
         if (this.state.isPlus) {
-            this.setState({second: d})
-            this.setState({num: this.state.first + this.state.symbol + d.substring(this.state.first.length)})
+            this.setState({second: d, num: this.state.first + this.state.symbol + d.substring(this.state.first.length)})
         } else {
             console.log(b)
-            this.setState({first: b})
-            this.setState({num: b})
+            this.setState({first: b, num: b})
         }
 
     }
 
     //运算符
     bindCalculator(index) {
-        this.setState({isPlus: true})
-        this.setState({symbol: index})
-        this.setState({num: this.state.first + index})
+        this.setState({isPlus: true, symbol: index, num: this.state.first + index})
     }
 
     //归零
     bindCalculatorAc() {
-        this.setState({num: 0})
-        this.setState({isPlus: false})
-        this.setState({symbol: ''})
-        this.setState({first: 0})
-        this.setState({second: 0})
-        this.setState({result: ''})
+        this.setState({
+            num: 0,
+            isPlus: false,
+            symbol: '',
+            first: 0,
+            second: 0,
+            result: '',
+            arrayFirst: [],
+            arraySecond: []
+        })
     }
 
     //运算
     bindCalculatorRes() {
         this.setState({isResult: true})
-        arrayFirst = []
-        arraySecond = []
         const second = parseInt(this.state.second.substr(this.state.first.length))
         switch (this.state.symbol) {
             case '+':
@@ -93,6 +84,14 @@ export default class Calculator extends Component {
     }
 
     render() {
+        const numbers = [9, 8, 7, 4, 5, 6, 1, 2, 3, 0]
+        const listItems = numbers.map((number, i) =>
+            <div className="keyName" key={i} onClick={() => this.bindNum(number)}>{number}</div>
+        )
+        const symbols = ['+', '-', '*', '/']
+        const symbolItems = symbols.map((symbol, i) =>
+            <div className="keyName" key={i} onClick={() => this.bindCalculator(symbol)}>{symbol}</div>
+        )
         return (
             <div className='main'>
                 <div>
@@ -100,22 +99,10 @@ export default class Calculator extends Component {
                     <input value={this.state.num} className="screen" type="text"/>
                 </div>
                 <div className="keyList">
-                    <div className="key" onClick={this.bindNum.bind(this, 7)}>7</div>
-                    <div className="key" onClick={this.bindNum.bind(this, 8)}>8</div>
-                    <div className="key" onClick={this.bindNum.bind(this, 9)}>9</div>
-                    <div className="key" onClick={this.bindNum.bind(this, 4)}>4</div>
-                    <div className="key" onClick={this.bindNum.bind(this, 5)}>5</div>
-                    <div className="key" onClick={this.bindNum.bind(this, 6)}>6</div>
-                    <div className="key" onClick={this.bindNum.bind(this, 1)}>1</div>
-                    <div className="key" onClick={this.bindNum.bind(this, 2)}>2</div>
-                    <div className="key" onClick={this.bindNum.bind(this, 3)}>3</div>
-                    <div className="key" onClick={this.bindNum.bind(this, 0)}>0</div>
-                    <div className="key" onClick={this.bindCalculator.bind(this, '+')}>+</div>
-                    <div className="key" onClick={this.bindCalculator.bind(this, '-')}>-</div>
-                    <div className="key" onClick={this.bindCalculator.bind(this, '*')}>*</div>
-                    <div className="key" onClick={this.bindCalculator.bind(this, '/')}>/</div>
-                    <div className="key" onClick={this.bindCalculatorRes.bind(this, '=')}>=</div>
-                    <div className="key" onClick={this.bindCalculatorAc.bind(this)}>AC</div>
+                    {listItems}
+                    {symbolItems}
+                    <div className="keyName" onClick={this.bindCalculatorRes.bind(this, '=')}>=</div>
+                    <div className="keyName" onClick={this.bindCalculatorAc.bind(this)}>AC</div>
                 </div>
             </div>
         )
