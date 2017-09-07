@@ -1,0 +1,13 @@
+.Tab {
+  width: 100%;
+  height: 3rem;
+  background: #fff;
+  display: flex;
+  text-align: center;
+  position: fixed;
+  bottom: 0; }
+  .Tab .icon {
+    flex: 1;
+    line-height: 3.5rem; }
+    .Tab .icon img {
+      width: 2rem; }

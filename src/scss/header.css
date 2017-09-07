@@ -1,27 +1,36 @@
-.homePage {
+.header {
   display: flex;
   width: 100%;
   height: 5.5rem;
   background: white; }
-  .homePage .avatar {
+  .header .avatar {
     flex: 1; }
-    .homePage .avatar img {
+    .header .avatar img {
       width: 4rem;
       height: 4rem;
       border-radius: 50%;
       margin-left: 1rem;
       position: relative;
       top: .7rem; }
-  .homePage .name {
+  .header .name {
     flex: 4;
     line-height: 2rem;
     position: relative;
     top: .8rem;
     margin-left: 1rem; }
-    .homePage .name .memberName {
+    .header .name .nickName {
       font-size: 1.2rem;
+      font-weight: 400; }
+    .header .name .fansNum {
+      font-size: .8rem;
       font-weight: 300; }
-    .homePage .name .memberDesc {
+    .header .name .memberDesc {
       font-size: .9rem;
       font-weight: 300;
       color: #888; }
+  .header .right {
+    line-height: 5.5rem;
+    position: relative;
+    right: 1rem; }
+    .header .right img {
+      width: 1rem; }

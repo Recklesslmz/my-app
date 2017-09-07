@@ -3,11 +3,10 @@
  */
 import React, {Component} from 'react'
 import '../App.css'
-
+import '../scss/Caculator.css'
 export default class Calculator extends Component {
-    constructor(props) {
-        super(props)
-        console.log(props)
+    constructor() {
+        super()
         this.state = {
             arrayFirst: [],
             arraySecond: [],
@@ -16,7 +15,7 @@ export default class Calculator extends Component {
             symbol: '',//运算符参数
             first: 0,//第一个数字
             second: 0,//第二个数字
-            result: '',//结果
+            result: 0,//结果
             isResult: false//是否运算
         }
     }
@@ -69,16 +68,16 @@ export default class Calculator extends Component {
         const second = parseInt(this.state.second.substr(this.state.first.length))
         switch (this.state.symbol) {
             case '+':
-                this.setState({num: parseInt(this.state.first) + second})
+                this.setState({result: parseInt(this.state.first) + second})
                 break
             case '-':
-                this.setState({num: parseInt(this.state.first) - second})
+                this.setState({result: parseInt(this.state.first) - second})
                 break
             case '*':
-                this.setState({num: parseInt(this.state.first) * second})
+                this.setState({result: parseInt(this.state.first) * second})
                 break
             case '/':
-                this.setState({num: parseInt(this.state.first) / second})
+                this.setState({result: parseInt(this.state.first) / second})
                 break
         }
     }
@@ -93,16 +92,16 @@ export default class Calculator extends Component {
             <div className="keyName" key={i} onClick={() => this.bindCalculator(symbol)}>{symbol}</div>
         )
         return (
-            <div className='main'>
+            <div className='main test'>
                 <div>
-                    <div>{this.state.num}</div>
+                    <div>{this.state.result}</div>
                     <input value={this.state.num} className="screen" type="text"/>
                 </div>
                 <div className="keyList">
                     {listItems}
                     {symbolItems}
-                    <div className="keyName" onClick={this.bindCalculatorRes.bind(this, '=')}>=</div>
-                    <div className="keyName" onClick={this.bindCalculatorAc.bind(this)}>AC</div>
+                    <div className="keyName" onClick={() => this.bindCalculatorRes('=')}>=</div>
+                    <div className="keyName" onClick={() => this.bindCalculatorAc()}>AC</div>
                 </div>
             </div>
         )

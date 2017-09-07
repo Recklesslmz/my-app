@@ -1,11 +1,12 @@
 /**
  * Created by limuzi on 2017/8/11.
  */
-import MemberInfo from '../page/MemberInfo'
 import Setting from '../page/Setting'
 import Click from '../page/ClickCounter'
 import CounterPanel from '../page/CounterPanel'
 import Calculator from '../page/Calculator'
+import MemberInfo from '../template/MemberInfo'
+
 
 const routes = [
     {
