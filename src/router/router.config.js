@@ -26,7 +26,7 @@ const routes = [
         component: CounterPanel
     },
     {
-        path: '/Calculator',
+        path: '/Calculator/:id',
         component: Calculator
     },
     {

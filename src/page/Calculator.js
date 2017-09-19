@@ -37,7 +37,10 @@ export default class Calculator extends Component {
         if (this.state.isPlus) {
             this.setState({second: d, num: this.state.first + this.state.symbol + d.substring(this.state.first.length)})
         } else if (this.state.isResult && this.state.isPlus === true) {
-            this.setState({second: d, num: this.state.result + this.state.symbol + d.substring(this.state.first.length)})
+            this.setState({
+                second: d,
+                num: this.state.result + this.state.symbol + d.substring(this.state.first.length)
+            })
         } else {
             console.log(b)
             this.setState({first: b, num: b})
@@ -89,6 +92,7 @@ export default class Calculator extends Component {
     }
 
     render() {
+        console.log(this.props.match.params.id)
         const numbers = [9, 8, 7, 4, 5, 6, 1, 2, 3, 0]
         const listItems = numbers.map((number, i) =>
             <div className="keyName" key={i} onClick={() => this.bindNum(number)}>{number}</div>
