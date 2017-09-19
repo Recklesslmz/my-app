@@ -6,7 +6,7 @@ import Click from '../page/ClickCounter'
 import CounterPanel from '../page/CounterPanel'
 import Calculator from '../page/Calculator'
 import MemberInfo from '../template/MemberInfo'
-
+import CommentApp from '../comment/CommentApp'
 
 const routes = [
     {
@@ -28,6 +28,10 @@ const routes = [
     {
         path: '/Calculator',
         component: Calculator
+    },
+    {
+        path: '/CommentApp',
+        component: CommentApp
     }
 ]
 
